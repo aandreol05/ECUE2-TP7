@@ -5,6 +5,7 @@ import net.lecnam.ecue2.tp7.nuancier.Nuancier;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class Execute {
 
@@ -65,11 +66,16 @@ public class Execute {
         }
     }
 
-
     private static void exercice2() {
+        Nuancier nuancier = new Nuancier();
+        Set<String> couleursTreeSet = nuancier.getCouleursTreeSet();
 
-
-
+        System.out.println(couleursTreeSet);
+        // Remarque :
+        // 1. Le doublon "rouge" a disparu car un Set n'accepte pas les doublons.
+        // 2. Les couleurs sont automatiquement triées par ordre alphabétique
+        //    ([blanc, cyan, marron, noir, rouge, vert]) car TreeSet maintient
+        //    ses éléments selon leur ordre naturel.
     }
 
     private static void exercice3() {
