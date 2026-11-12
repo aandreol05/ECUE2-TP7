@@ -1,31 +1,40 @@
 package net.lecnam.ecue2.tp7.nuancier;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Nuancier {
 
-    // Déclaration sans initialisation
     private List<String> couleurs;
+    private Map<Character, String> couleursMap;
 
     public Nuancier() {
-        // Initialisation avec une ArrayList
         this.couleurs = new ArrayList<>();
-
-        // Ajout des couleurs
         this.couleurs.add("noir");
         this.couleurs.add("rouge");
         this.couleurs.add("vert");
         this.couleurs.add("marron");
         this.couleurs.add("blanc");
-
-        // Ajout d'un doublon (autorisé dans une List)
         this.couleurs.add("rouge");
-
-        // Insertion en première position (index 0) sans modifier le code précédent
         this.couleurs.add(0, "cyan");
+
+        // Appel immédiat après l'ajout des couleurs
+        initializeMap();
+    }
+
+    private void initializeMap() {
+        this.couleursMap = new HashMap<>();
+        for (String couleur : getCouleursTreeSet()) {
+            this.couleursMap.put(couleur.charAt(0), couleur);
+        }
+    }
+
+    public String getCouleurFromCode(char initiale) {
+        return this.couleursMap.get(initiale);
     }
 
     public List<String> getCouleurs() {
