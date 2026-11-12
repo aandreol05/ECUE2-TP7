@@ -1,27 +1,25 @@
 package net.lecnam.ecue2.tp7;
 
 import net.lecnam.ecue2.tp7.nuancier.Nuancier;
+import net.lecnam.ecue2.tp7.film.Film;
 
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Execute {
 
     public static void main(String[] args) {
 
-        exercice1();
+        //exercice1();
 
-        exercice2();
+        //exercice2();
 
-        exercice3();
+        //exercice3();
 
         exercice4();
 
-        exercice5();
+        //exercice5();
 
-        exercice6();
+        //exercice6();
 
 
     }
@@ -86,9 +84,27 @@ public class Execute {
 
 
     private static void exercice4() {
+        // Collection nativement triée : TreeSet
+        Set<Film> films = new TreeSet<>();
+        films.add(new Film("Inception", "Christopher Nolan", 2010));
+        films.add(new Film("The Godfather", "Francis Ford Coppola", 1972));
+        films.add(new Film("Pulp Fiction", "Quentin Tarantino", 1994));
+        films.add(new Film("12 Angry Men", "Sidney Lumet", 1957));
+        films.add(new Film("Parasite", "Bong Joon-ho", 2019));
 
+        System.out.println("--- Tri ascendant ---");
+        for (Film f : films) {
+            System.out.println(f);
+        }
 
+        // Création d'une ArrayList à partir du TreeSet et inversion de l'ordre
+        List<Film> filmsList = new ArrayList<>(films);
+        Collections.reverse(filmsList);
 
+        System.out.println("--- Tri descendant ---");
+        for (Film f : filmsList) {
+            System.out.println(f);
+        }
     }
 
     private static void exercice5() {
