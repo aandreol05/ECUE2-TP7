@@ -1,8 +1,10 @@
 package net.lecnam.ecue2.tp7;
 
+import net.lecnam.ecue2.tp7.film.*;
 import net.lecnam.ecue2.tp7.nuancier.Nuancier;
-import net.lecnam.ecue2.tp7.film.Film;
 
+
+import java.io.IOException;
 import java.util.*;
 
 public class Execute {
@@ -15,9 +17,9 @@ public class Execute {
 
         //exercice3();
 
-        exercice4();
+        //exercice4();
 
-        //exercice5();
+        exercice5();
 
         //exercice6();
 
@@ -108,9 +110,12 @@ public class Execute {
     }
 
     private static void exercice5() {
-
-
-
+        try {
+            FilmService filmService = new FilmService();
+            filmService.printFilms();
+        } catch (IOException e) {
+            System.err.println("Erreur de lecture du fichier : " + e.getMessage());
+        }
     }
 
     private static void exercice6() {
