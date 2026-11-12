@@ -32,9 +32,9 @@ public class FilmService {
             // Vérifie dans films.csv si le séparateur est ";" ou ","
             String[] infos = ligne.split(";");
             if (infos.length >= 3) {
-                String titre = infos[0].trim();
-                String realisateur = infos[1].trim();
-                int annee = Integer.parseInt(infos[2].trim());
+                String titre = infos[1].trim();
+                String realisateur = infos[2].trim();
+                int annee = Integer.parseInt(infos[0].trim());
 
                 Film film = new Film(titre, realisateur, annee);
                 filmSet.add(film);
